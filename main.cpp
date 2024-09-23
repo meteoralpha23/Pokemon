@@ -10,6 +10,16 @@ enum class PokemonChoice {
     InvalidChoice
 };
 
+enum class HealingItems {
+    Potion,
+    Elixir
+};
+
+enum class BattleItems {
+    Potion,
+    Elixir
+};
+
 int main() {
     // Variables to store player name and chosen Pokemon
     string player_name;
