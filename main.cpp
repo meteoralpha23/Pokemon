@@ -291,7 +291,7 @@ int main() {
         100); // Using parameterized constructor
 
     // Continue with the main flow of the game
-    ProfessorOak professor("Professor Oak");
+    ProfessorOak professor("Profesor Oak");
     Player player("Ash", charmander);
 
     // Greet the player and offer Pokemon choices
