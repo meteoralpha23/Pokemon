@@ -1,8 +1,7 @@
-#pragma once
-// Define an enum for Pokemon choices
-enum class PokemonChoice {
-	CHARMANDER = 1,
-	BULBASAUR,
-	SQUIRTLE,
-	PIKACHU // Default choice
+enum class PokemonType {
+	FIRE,
+	GRASS,
+	WATER,
+	ELECTRIC,
+	NORMAL // Added for the default constructor
 };

@@ -1,4 +1,3 @@
-// Utility.cpp
 #include "Utility.hpp"
 #include <iostream>
 #include <limits>
