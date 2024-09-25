@@ -1,6 +1,9 @@
 #include <string>
+#include "Pokemon.hpp"
 using namespace std;
-class Player {
+
+// Include the new Pokemon headerclass 
+Player{
 public:
     string name;
     Pokemon chosenPokemon;
