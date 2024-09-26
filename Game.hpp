@@ -1,4 +1,3 @@
-#pragma once
 #include "Grass.hpp"
 
 class Player;
