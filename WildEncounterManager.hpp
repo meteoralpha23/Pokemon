@@ -1,9 +1,9 @@
-#pragma once
 #include <vector>
-#include "Grass.hpp" // Assuming the Grass struct is defined here 
+struct Grass;
+class Pokemon;
 
 class WildEncounterManager {
 public:
-	WildPokemon getRandomPokemonFromGrass(const Grass& grass
-	);
+    WildEncounterManager();
+    Pokemon getRandomPokemonFromGrass(const Grass& grass);
 };

@@ -1,5 +1,3 @@
-// Utility.h
-
 class Utility {
 public:
     static void clearConsole();
