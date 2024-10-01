@@ -1,3 +1,4 @@
+#pragma once
 #include "Pokemon.hpp"
 #include "PokemonType.hpp"
 #include <iostream>
@@ -5,44 +6,49 @@ using namespace std;
 
 // Default constructor
 Pokemon::Pokemon() {
-	name = "Unknown";
-	type = PokemonType::NORMAL;
-	health = 50;
+    name = "Unknown";
+    type = PokemonType::NORMAL;
+    health = 50;
+    maxHealth = 50;
+    attackPower = 10;
 }
 
 // Parameterized constructor
-Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health) {
-	name = p_name;
-	type = p_type;
-	health = p_health;
+Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health,
+    int p_attackPower) {
+    name = p_name;
+    type = p_type;
+    maxHealth = p_health;
+    health = p_health;
+    attackPower = p_attackPower;
 }
 
 // Copy constructor
 Pokemon::Pokemon(const Pokemon& other) {
-	name = other.name;
-	type = other.type;
-	health = other.health;
+    name = other.name;
+    type = other.type;
+    health = other.health;
+    maxHealth = other.maxHealth;
+    attackPower = other.attackPower;
 }
 
-// Destructor
-Pokemon::~Pokemon() {
-	// Destructor logic (if any) goes here
-}
-
-void Pokemon::attack(Pokemon& target) {
-	int damage = 10; // Fixed damage for simplicity
-	cout << name << " attacks " << target.name << " for " << damage << " damage!\\n";
-	target.takeDamage(damage); // Apply damage to the target Pokémon
-}
-
-
+// Reduce HP by the damage amount
 void Pokemon::takeDamage(int damage) {
-	health -= damage; // Reduce HP by the damage amount
-	if (health < 0) {
-		health = 0; // Ensure HP doesn't go below 0
-	}
+    health -= damage;
+    if (health < 0) {
+        health = 0;
+    }
 }
 
-bool Pokemon::isFainted() const {
-	return health <= 0; // Return true if HP is 0 or less
+// Check if the Pokemon has fainted
+bool Pokemon::isFainted() const { return health <= 0; }
+
+// Restore health to full
+void Pokemon::heal() { health = maxHealth; }
+
+// Attack another Pokemon
+void Pokemon::attack(Pokemon& target) {
+    cout << name << " attacks " << target.name << " for " << attackPower
+        << " damage!\n";
+    target.takeDamage(attackPower);
 }

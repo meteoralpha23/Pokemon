@@ -1,11 +1,9 @@
-#include <string>
 #include <vector>
-using namespace std;
-
+struct Grass;
 class Pokemon;
 
-struct Grass {
-    string environmentType;  // Example: "Forest", "Cave", "Riverbank"
-    vector<Pokemon> wildPokemonList;  // List of wild Pokémon in this grass
-    int encounterRate;  // Likelihood of encountering a wild Pokémon, out of 100
+class WildEncounterManager {
+public:
+    WildEncounterManager();
+    Pokemon getRandomPokemonFromGrass(const Grass& grass);
 };

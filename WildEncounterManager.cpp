@@ -1,4 +1,3 @@
-
 #include "WildEncounterManager.hpp"
 #include "Grass.hpp"
 #include "Pokemon.hpp"
