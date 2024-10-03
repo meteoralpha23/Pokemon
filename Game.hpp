@@ -2,7 +2,6 @@
 #include "Player.hpp"
 #include "Grass.hpp"
 
-// class Player;
 namespace N_Main
 {
     using namespace N_Pokemon;
@@ -13,7 +12,7 @@ namespace N_Main
         Grass forestGrass;
     public:
         Game();
-        void gameLoop(Player& player);
-        void visitPokeCenter(Player& player);
+        void gameLoop(Player* player);
+        void visitPokeCenter(Player* player);
     };
 }

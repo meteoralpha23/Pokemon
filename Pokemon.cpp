@@ -2,6 +2,8 @@
 #include "PokemonType.hpp"
 #include <iostream>
 
+using namespace std;
+
 namespace N_Pokemon {
 
     // Default constructor
@@ -14,7 +16,7 @@ namespace N_Pokemon {
     }
 
     // Parameterized constructor
-    Pokemon::Pokemon(std::string p_name, PokemonType p_type, int p_health,
+    Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health,
         int p_attackPower) {
         name = p_name;
         type = p_type;
@@ -24,12 +26,12 @@ namespace N_Pokemon {
     }
 
     // Copy constructor
-    Pokemon::Pokemon(const Pokemon& other) {
-        name = other.name;
-        type = other.type;
-        health = other.health;
-        maxHealth = other.maxHealth;
-        attackPower = other.attackPower;
+    Pokemon::Pokemon(Pokemon* other) {
+        name = other->name;
+        type = other->type;
+        health = other->health;
+        maxHealth = other->maxHealth;
+        attackPower = other->attackPower;
     }
 
     // Reduce HP by the damage amount
@@ -47,9 +49,9 @@ namespace N_Pokemon {
     void Pokemon::heal() { health = maxHealth; }
 
     // Attack another Pokemon
-    void Pokemon::attack(Pokemon& target) {
-        std::cout << name << " attacks " << target.name << " for " << attackPower
+    void Pokemon::attack(Pokemon* target) {
+        std::cout << name << " attacks " << target->name << " for " << attackPower
             << " damage!\n";
-        target.takeDamage(attackPower);
+        target->takeDamage(attackPower);
     }
 } // namespace N_Pokemon
