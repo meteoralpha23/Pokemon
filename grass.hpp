@@ -1,9 +1,15 @@
+#pragma once
+#include <string>
 #include <vector>
-struct Grass;
-class Pokemon;
 
-class WildEncounterManager {
-public:
-    WildEncounterManager();
-    Pokemon getRandomPokemonFromGrass(const Grass& grass);
-};
+namespace N_Pokemon {
+
+    class Pokemon;
+
+    struct Grass {
+        std::string environmentType;  // Example: "Forest", "Cave", "Riverbank"
+        std::vector<Pokemon> wildPokemonList;  // List of wild Pokémon in this grass
+        int encounterRate;  // Likelihood of encountering a wild Pokémon, out of 100
+    };
+
+}

@@ -1,15 +1,21 @@
 #pragma once
-
 #include "BattleState.hpp"
 #include "Player.hpp"
 
-class BattleManager {
-public:
-    void startBattle(Player& player, Pokemon& wildPokemon);
-private:
-    BattleState battleState;  // New BattleState object to track the battle
+namespace N_Battle
+{
+    class Pokemon;
 
-    void battle();
-    void handleBattleOutcome();
-    void updateBattleState(); // Method to update the battle state after each turn
-};
+    using namespace N_Character::N_Player;
+
+    class BattleManager {
+    public:
+        void startBattle(Player& player, N_Pokemon::Pokemon& wildPokemon);
+    private:
+        BattleState battleState;
+
+        void battle();
+        void handleBattleOutcome();
+        void updateBattleState();
+    };
+}
